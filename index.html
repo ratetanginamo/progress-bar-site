@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Progress Bar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #bar {
+      width: 80%;
+      height: 30px;
+      background-color: #333;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    #fill {
+      height: 100%;
+      width: 0%;
+      background-color: limegreen;
+      transition: width 0.1s;
+    }
+  </style>
+</head>
+<body>
+  <h1>⭐ Loading Progress ⭐</h1>
+  <div id="bar"><div id="fill"></div></div>
+  <p id="percent">0%</p>
+
+  <script>
+    let i = 0;
+    const fill = document.getElementById("fill");
+    const percent = document.getElementById("percent");
+
+    const interval = setInterval(() => {
+      i++;
+      fill.style.width = i + "%";
+      percent.textContent = i + "%";
+      if (i >= 100) clearInterval(interval);
+    }, 100);
+  </script>
+</body>
+</html>
