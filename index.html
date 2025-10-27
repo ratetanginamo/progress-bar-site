@@ -6,25 +6,26 @@
   <title>Loading Progress Bar</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
+      background: #0e0e0e;
       color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 100px;
+      padding-top: 80px;
     }
     #bar {
       width: 80%;
       height: 30px;
-      background-color: #333;
-      margin: 20px auto;
+      background: #333;
       border-radius: 20px;
+      margin: 20px auto;
       overflow: hidden;
     }
     #fill {
-      height: 100%;
       width: 0%;
-      background-color: limegreen;
-      transition: width 0.1s;
+      height: 100%;
+      background: limegreen;
+      border-radius: 20px;
+      transition: width 0.1s linear;
     }
   </style>
 </head>
@@ -37,7 +38,6 @@
     let i = 0;
     const fill = document.getElementById("fill");
     const percent = document.getElementById("percent");
-
     const interval = setInterval(() => {
       i++;
       fill.style.width = i + "%";
